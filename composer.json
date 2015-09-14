@@ -20,5 +20,5 @@
             "Erunion": "src/Erunion"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
