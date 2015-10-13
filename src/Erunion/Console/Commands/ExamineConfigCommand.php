@@ -73,7 +73,6 @@ class ExamineConfigCommand extends \Illuminate\Console\Command
 
             $row[] = '<comment>' . $key . '</comment>';
             if (!is_array($value)) {
-                $row[] = '<comment>' . $key . '</comment>';
                 $row[] = (is_bool($value)) ? (($value) ? 'true' : 'false') : $value;
             }
 
