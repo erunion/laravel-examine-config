@@ -71,10 +71,8 @@ class ExamineConfigCommand extends \Illuminate\Console\Command
                 $row = array_merge($row, array_fill(0, ($current_depth - 1), ''));
             }
 
-            if (is_array($value)) {
-                $row[] = '<comment>' . $key . '</comment>';
-            } else {
-                $row[] = '<comment>' . $key . '</comment>';
+            $row[] = '<comment>' . $key . '</comment>';
+            if (!is_array($value)) {
                 $row[] = (is_bool($value)) ? (($value) ? 'true' : 'false') : $value;
             }
 
