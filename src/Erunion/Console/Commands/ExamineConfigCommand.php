@@ -35,10 +35,17 @@ class ExamineConfigCommand extends \Illuminate\Console\Command
                 return;
             }
 
-            $configs = [
-                $section => Config::get($section)
-            ];
+            // If the requested string is a string, and not something that can be displayed in a table, then just print
+            // it out in the console.
+            $config = Config::get($section);
+            if (!is_array($config)) {
+                $this->line('<comment>' . $config . '</comment>');
+                return;
+            }
 
+            $configs = [
+                $section => $config
+            ];
         } else {
             $configs = Config::all();
             ksort($configs);
