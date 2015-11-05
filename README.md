@@ -118,7 +118,17 @@ Configuration: app
 +----------------------+------------------------------------+---------------------------------------------------------------+
 ```
 
+### Show your configured `app.timezone`
+```
+$ php artisan config:examine app.timezone
+America/New_York
+```
+
 ## Changelog
+### 1.1.0
+* Fixing a bug where trying to pull configured strings (like `app.timezone`) would fail because it wasn't an array, and
+couldn't be tableized.
+
 ### 1.0.0
 * Initial release
 
